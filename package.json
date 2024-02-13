@@ -1,0 +1,32 @@
+{
+  "name": "hello_world",
+  "version": "1.0.0",
+  "description": "Hello React",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabeel-mustafa-git/hello-react.git"
+  },
+  "keywords": [],
+  "author": "nabeel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nabeel-mustafa-git/hello-react/issues"
+  },
+  "homepage": "https://github.com/nabeel-mustafa-git/hello-react#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ]
+}

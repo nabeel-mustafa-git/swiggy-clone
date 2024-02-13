@@ -1,0 +1,453 @@
+const reslist = {
+  restaurants: [
+    {
+      info: {
+        id: "65797",
+        link: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/obtyqt35sq55t0owwixq",
+        name: "Leon's",
+        cloudinaryImageId: "b2edbc28b7b8219d6e0a9c049ce06658",
+        locality: "Koramangala",
+        areaName: "Koramangala",
+        costForTwo: "₹300 for two",
+        cuisines: ["American", "Snacks", "Turkish", "Portuguese", "Continental"],
+        avgRating: 3.8,
+        parentId: "371281",
+        avgRatingString: "4.4",
+        totalRatingsString: "10K+",
+        sla: {
+          deliveryTime: 42,
+          lastMileTravel: 1.4,
+          serviceability: "SERVICEABLE",
+          slaString: "40-45 mins",
+          lastMileTravelString: "1.4 km",
+          iconType: "ICON_TYPE_EMPTY",
+        },
+        availability: {
+          nextCloseTime: "2024-02-11 04:00:00",
+          opened: true,
+        },
+        badges: {},
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {},
+            textBased: {},
+            textExtendedBadges: {},
+          },
+        },
+        aggregatedDiscountInfoV3: {
+          header: "₹125 OFF",
+          subHeader: "ABOVE ₹199",
+          discountTag: "FLAT DEAL",
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {},
+          },
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+      },
+      analytics: {},
+      cta: {
+        link: "https://www.swiggy.com/restaurants/leons-burgers-and-wings-leon-grill-koramangala-bangalore-65797",
+        type: "WEBLINK",
+      },
+    },
+    {
+      info: {
+        id: "18973",
+        name: "Nandhana Palace",
+        link: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552",
+        cloudinaryImageId: "195876a3181ef63f76e45e3a7b49b585",
+        locality: "Koramangala",
+        areaName: "Koramangala",
+        costForTwo: "₹500 for two",
+        cuisines: ["Biryani", "Andhra", "South Indian", "North Indian"],
+        avgRating: 4.2,
+        parentId: "2120",
+        avgRatingString: "4.2",
+        totalRatingsString: "10K+",
+        sla: {
+          deliveryTime: 27,
+          lastMileTravel: 0.6,
+          serviceability: "SERVICEABLE",
+          slaString: "25-30 mins",
+          lastMileTravelString: "0.6 km",
+          iconType: "ICON_TYPE_EMPTY",
+        },
+        availability: {
+          nextCloseTime: "2024-02-11 02:00:00",
+          opened: true,
+        },
+        badges: {},
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {},
+            textBased: {},
+            textExtendedBadges: {},
+          },
+        },
+        aggregatedDiscountInfoV3: {
+          header: "₹125 OFF",
+          subHeader: "ABOVE ₹399",
+          discountTag: "FLAT DEAL",
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {},
+          },
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+      },
+      analytics: {},
+      cta: {
+        link: "https://www.swiggy.com/restaurants/nandhana-palace-koramangala-bangalore-18973",
+        type: "WEBLINK",
+      },
+    },
+    {
+      info: {
+        id: "312",
+        name: "Beijing Bites",
+        link: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/05994df0e49725bd230146c320b8f7aa",
+        cloudinaryImageId: "ca0eb08d0635fd6da2e5a480fec897d0",
+        locality: "5th A Block",
+        areaName: "Koramangala",
+        costForTwo: "₹450 for two",
+        cuisines: ["Chinese", "Thai", "Pan-Asian"],
+        avgRating: 3.4,
+        parentId: "103",
+        avgRatingString: "4.4",
+        totalRatingsString: "10K+",
+        sla: {
+          deliveryTime: 42,
+          lastMileTravel: 1,
+          serviceability: "SERVICEABLE",
+          slaString: "40-45 mins",
+          lastMileTravelString: "1.0 km",
+          iconType: "ICON_TYPE_EMPTY",
+        },
+        availability: {
+          nextCloseTime: "2024-02-11 01:00:00",
+          opened: true,
+        },
+        badges: {
+          textExtendedBadges: [
+            {
+              iconId: "guiltfree/GF_Logo_android_3x",
+              shortDescription: "options available",
+              fontColor: "#7E808C",
+            },
+          ],
+        },
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {},
+            textBased: {},
+            textExtendedBadges: {
+              badgeObject: [
+                {
+                  attributes: {
+                    description: "",
+                    fontColor: "#7E808C",
+                    iconId: "guiltfree/GF_Logo_android_3x",
+                    shortDescription: "options available",
+                  },
+                },
+              ],
+            },
+          },
+        },
+        aggregatedDiscountInfoV3: {
+          header: "₹100 OFF",
+          subHeader: "ABOVE ₹599",
+          discountTag: "FLAT DEAL",
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {},
+          },
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+      },
+      analytics: {},
+      cta: {
+        link: "https://www.swiggy.com/restaurants/beijing-bites-5th-a-block-koramangala-bangalore-312",
+        type: "WEBLINK",
+      },
+    },
+    {
+      info: {
+        id: "289266",
+        name: "BOX8 - Desi Meals",
+        link: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597",
+        cloudinaryImageId: "69a061b7e0f951cef2b4947946f94ec6",
+        locality: "6TH BLOCK",
+        areaName: "Koramangala",
+        costForTwo: "₹250 for two",
+        cuisines: ["North Indian", "Biryani", "Thalis", "Home Food"],
+        avgRating: 4.4,
+        parentId: "10655",
+        avgRatingString: "4.4",
+        totalRatingsString: "1K+",
+        sla: {
+          deliveryTime: 16,
+          lastMileTravel: 0.7,
+          serviceability: "SERVICEABLE",
+          slaString: "11-21 mins",
+          lastMileTravelString: "0.7 km",
+          iconType: "ICON_TYPE_EMPTY",
+        },
+        availability: {
+          nextCloseTime: "2024-02-11 02:00:00",
+          opened: true,
+        },
+        badges: {
+          textExtendedBadges: [
+            {
+              iconId: "guiltfree/GF_Logo_android_3x",
+              shortDescription: "options available",
+              fontColor: "#7E808C",
+            },
+          ],
+        },
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {},
+            textBased: {},
+            textExtendedBadges: {
+              badgeObject: [
+                {
+                  attributes: {
+                    description: "",
+                    fontColor: "#7E808C",
+                    iconId: "guiltfree/GF_Logo_android_3x",
+                    shortDescription: "options available",
+                  },
+                },
+              ],
+            },
+          },
+        },
+        aggregatedDiscountInfoV3: {
+          header: "50% OFF",
+          subHeader: "UPTO ₹100",
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {},
+          },
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+      },
+      analytics: {},
+      cta: {
+        link: "https://www.swiggy.com/restaurants/box8-desi-meals-6th-block-koramangala-bangalore-289266",
+        type: "WEBLINK",
+      },
+    },
+    {
+      info: {
+        id: "25620",
+        name: "KFC",
+        link: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597",
+
+        cloudinaryImageId: "f01666ac73626461d7455d9c24005cd4",
+        locality: "Intermediate Ring Road",
+        areaName: "Ejipura",
+        costForTwo: "₹400 for two",
+        cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
+        avgRating: 3.9,
+        parentId: "547",
+        avgRatingString: "4.2",
+        totalRatingsString: "10K+",
+        sla: {
+          deliveryTime: 33,
+          lastMileTravel: 0.8,
+          serviceability: "SERVICEABLE",
+          slaString: "30-35 mins",
+          lastMileTravelString: "0.8 km",
+          iconType: "ICON_TYPE_EMPTY",
+        },
+        availability: {
+          nextCloseTime: "2024-02-10 23:00:00",
+          opened: true,
+        },
+        badges: {},
+        isOpen: true,
+        aggregatedDiscountInfoV2: {},
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {},
+            textBased: {},
+            textExtendedBadges: {},
+          },
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {},
+          },
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+      },
+      analytics: {},
+      cta: {
+        link: "https://www.swiggy.com/restaurants/kfc-intermediate-ring-road-ejipura-bangalore-25620",
+        type: "WEBLINK",
+      },
+    },
+    {
+      info: {
+        id: "50467",
+        name: "Bakingo",
+        link: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/obtyqt35sq55t0owwixq",
+        cloudinaryImageId: "05994df0e49725bd230146c320b8f7aa",
+        locality: "1st Block",
+        areaName: "Koramangala",
+        costForTwo: "₹300 for two",
+        cuisines: ["Bakery", "Desserts", "Beverages", "Snacks"],
+        avgRating: 4.3,
+        parentId: "3818",
+        avgRatingString: "4.3",
+        totalRatingsString: "5K+",
+        sla: {
+          deliveryTime: 28,
+          lastMileTravel: 2.1,
+          serviceability: "SERVICEABLE",
+          slaString: "25-30 mins",
+          lastMileTravelString: "2.1 km",
+          iconType: "ICON_TYPE_EMPTY",
+        },
+        availability: {
+          nextCloseTime: "2024-02-11 01:00:00",
+          opened: true,
+        },
+        badges: {},
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {},
+            textBased: {},
+            textExtendedBadges: {},
+          },
+        },
+        aggregatedDiscountInfoV3: {
+          header: "₹125 OFF",
+          subHeader: "ABOVE ₹399",
+          discountTag: "FLAT DEAL",
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {},
+          },
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+      },
+      analytics: {},
+      cta: {
+        link: "https://www.swiggy.com/restaurants/bakingo-1st-block-koramangala-bangalore-50467",
+        type: "WEBLINK",
+      },
+    },
+    {
+      info: {
+        id: "352791",
+        name: "Grameen Kulfi",
+        link: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552",
+        cloudinaryImageId: "gjcslopkyvnsc1gjjguq",
+        locality: "8th Block",
+        areaName: "Koramangala",
+        costForTwo: "₹120 for two",
+        cuisines: ["Ice Cream", "Desserts"],
+        avgRating: 4.8,
+        veg: true,
+        parentId: "12175",
+        avgRatingString: "4.8",
+        totalRatingsString: "500+",
+        sla: {
+          deliveryTime: 28,
+          lastMileTravel: 1.4,
+          serviceability: "SERVICEABLE",
+          slaString: "25-30 mins",
+          lastMileTravelString: "1.4 km",
+          iconType: "ICON_TYPE_EMPTY",
+        },
+        availability: {
+          nextCloseTime: "2024-02-10 23:00:00",
+          opened: true,
+        },
+        badges: {},
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {},
+            textBased: {},
+            textExtendedBadges: {},
+          },
+        },
+        aggregatedDiscountInfoV3: {
+          header: "60% OFF",
+          subHeader: "UPTO ₹120",
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {},
+          },
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+      },
+      analytics: {},
+      cta: {
+        link: "https://www.swiggy.com/restaurants/grameen-kulfi-8th-block-koramangala-bangalore-352791",
+        type: "WEBLINK",
+      },
+    },
+  ],
+};
+
+export default reslist;
