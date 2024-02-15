@@ -1,3 +1,5 @@
+import starIcon from "../images/star-icon.svg";
+
 const RestaurantCard = ({ resData }) => {
   const { cloudinaryImageId, name, avgRating, cuisines, sla } = resData?.info;
 
@@ -11,8 +13,9 @@ const RestaurantCard = ({ resData }) => {
       <h3 className="res-card-name">{name}</h3>
       <p className="dishes">{cuisines.join(", ")}</p>
       <div className="rating-container">
+        <img src={starIcon} className="star-icon" />
         <h4 className="rating">{avgRating}</h4>
-        <p className="delivery">Get in: {sla.deliveryTime}m</p>
+        <h4 className="delivery"> - Get in: {sla.deliveryTime}m</h4>
       </div>
     </div>
   );

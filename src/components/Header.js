@@ -1,28 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+
+  // useEffect(() => {
+  //   console.log(btnName);
+  // }, [btnName]);
 
   return (
     <div className="header">
       <div className="logo-container">
         <h5 className="logo">
-          Food<span>It</span>
+          <Link to="/">
+            Food<span>It</span>
+          </Link>
         </h5>
       </div>
       <div className="nav-items">
         <ul>
           <li>
-            <a href="">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="">About Us</a>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
-            <a href="">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <a href="">Cart</a>
+            <Link to="/cart">Cart</Link>
           </li>
           <li>
             <button

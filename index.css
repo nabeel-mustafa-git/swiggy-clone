@@ -16,7 +16,7 @@ a {
 .logo {
   font-size: xx-large;
 }
-.logo > span {
+.logo > a > span {
   color: red;
 }
 .logo-container {
@@ -94,25 +94,34 @@ a {
 }
 .rating-container {
   display: flex;
+  align-items: center;
   margin: 10px;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.star-icon {
+  width: 25px;
+  height: 25px;
+  background: green;
+  border-radius: 999;
+  padding: 4px;
 }
 .rating {
   padding: 5px;
-  background-color: green;
-  border-radius: 5px;
-  color: white;
+  font-size: 110%;
 }
 .dishes {
-  color: rgba(0, 0, 0, 0.651);
-  /* text-align: center; */
+  color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  text-wrap: nowrap;
   padding-left: 10px;
+  text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .delivery {
   padding: 5px;
+  padding-left: 0;
   color: rgba(0, 0, 0, 0.5);
 }
 

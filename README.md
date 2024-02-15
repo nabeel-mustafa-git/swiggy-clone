@@ -28,3 +28,8 @@ Footer
 Virtual DOM (representation of an Actual DOM)
 
 Diff Algorithm (difference between old and virtual DOM)
+
+> > > > > 2 Types of Routing in Web apps
+
+-Client Side Routing (Single Page Application use Client Side Routing)
+-Server Side Routing

@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -13,7 +14,7 @@ const Body = () => {
   }, []);
 
   const corsBypasser = "https://corsproxy.io/?",
-    apiUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING:";
+    apiUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
 
   const fetchData = async () => {
     const data = await fetch(corsBypasser + apiUrl);
@@ -22,7 +23,6 @@ const Body = () => {
     const fetchedDataArray = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     setListOfRestaurants(fetchedDataArray);
     setFilteredRestaurants(fetchedDataArray);
-    //  ?. this is called optional chaining.
 
     // console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
   };
@@ -73,7 +73,9 @@ const Body = () => {
       <div className="res-container">
         {listOfRestaurants.length === 0 ? <Shimmer /> : <></>}
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}>
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
