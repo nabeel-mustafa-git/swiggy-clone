@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -17,15 +18,23 @@ const Body = () => {
     apiUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
 
   const fetchData = async () => {
-    const data = await fetch(corsBypasser + apiUrl);
+    try {
+      const data = await fetch(corsBypasser + apiUrl);
 
-    const json = await data.json();
-    const fetchedDataArray = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    setListOfRestaurants(fetchedDataArray);
-    setFilteredRestaurants(fetchedDataArray);
+      const json = await data.json();
+      const fetchedDataArray = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      setListOfRestaurants(fetchedDataArray);
+      setFilteredRestaurants(fetchedDataArray);
+    } catch (e) {
+      console.log("Error Catched: " + e);
+    }
 
     // console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) return <h1>No Internet</h1>;
 
   return (
     <div className="body">
