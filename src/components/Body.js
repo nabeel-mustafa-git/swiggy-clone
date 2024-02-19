@@ -37,8 +37,8 @@ const Body = () => {
   if (onlineStatus === false) return <h1>No Internet</h1>;
 
   return (
-    <div className="body">
-      <div className="search">
+    <div className="body max-width max-lg:mx-7">
+      <div className="search text-center py-5">
         <form
           className="container"
           onSubmit={(e) => {
@@ -46,6 +46,7 @@ const Body = () => {
           }}
         >
           <input
+            className="bg-transparent outline-none rounded-full px-2 mx-4"
             type="text"
             placeholder="Search Here"
             value={searchText}
@@ -66,7 +67,7 @@ const Body = () => {
         </form>
       </div>
 
-      <div className="fliter">
+      <div className="fliter py-5 lg:px-5">
         <button
           className="button"
           onClick={() => {
@@ -79,7 +80,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="res-container">
+      <div className="res-container flex gap-5 flex-wrap justify-evenly">
         {listOfRestaurants.length === 0 ? <Shimmer /> : <></>}
         {filteredRestaurants.map((restaurant) => (
           <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}>
