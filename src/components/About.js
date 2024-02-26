@@ -2,6 +2,7 @@ import aboutStyling from "../styling/about.css";
 import UserCard from "./UserCard";
 import UserClass from "./UserClass";
 import { Component } from "react";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class About extends Component {
     return (
       <div className="about-container">
         <h1>About</h1>
+        <UserContext.Consumer>{(data) => <p>{data.loggedInUser}</p>}</UserContext.Consumer>
         <UserCard name={"Aks - function"} />
         <UserClass name={"child 1 - class"} location={"skp loc"} />
       </div>

@@ -1,0 +1,8 @@
+example.test.js
+example.test.ts
+example.spec.ts
+example.spec.ts
+
+All files with these extensions will be test files.
+
+\_ \_ = dunder

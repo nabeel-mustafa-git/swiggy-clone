@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const userData = useContext(UserContext);
 
-  // const onlineStatus = useOnlineStatus();
+  //subscribing to store using selector
+  const cartItems = useSelector((store) => store.cart.items);
+  // console.log(cartItems);
 
+  const { loggedInUser } = userData;
   return (
     <div className="header flex items-center justify-between py-4 px-20 shadow-lg shadow-gray-200">
       <div className="logo-container ">
@@ -18,7 +23,6 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul className="flex items-center gap-12 font-semibold text-gray-800 hover:*:text-orange-500 *:scale-90">
-          {/* <li>{onlineStatus === true ? <p>Online</p> : <p>Offline</p>}</li> */}
           <li>
             <Link to="/about" className="flex gap-1 items-center">
               About Us
@@ -57,7 +61,7 @@ const Header = () => {
           </li>
           <li>
             <Link to="/cart" className="flex gap-1 items-center">
-              Cart{" "}
+              <span className="bg-green-500 text-white px-1 rounded">{cartItems.length}</span> Cart
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path
                   strokeLinecap="round"
@@ -72,7 +76,7 @@ const Header = () => {
             <button
               className="button"
               onClick={() => {
-                btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
+                btnName === "Login" ? setBtnName(loggedInUser) : setBtnName("Login");
               }}
             >
               {btnName}
