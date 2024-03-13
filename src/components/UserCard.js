@@ -13,16 +13,6 @@ const UserCard = ({ nameProp }) => {
     fetchData();
   }, []);
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     console.log("interval");
-  //   }, 1000);
-
-  //   return () => {
-  //     clearInterval(timer);
-  //   };
-  // }, []);
-
   return (
     <div className="user-card">
       <h2>Name: {data.name}</h2>

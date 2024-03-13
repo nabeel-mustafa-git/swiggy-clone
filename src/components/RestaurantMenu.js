@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
-import { cloudinaryImageUrl } from "../utils/constants";
 import RestaurantAccordion from "./RestaurantAccordion";
 import ResMenuShimmer from "./ResMenuShimmer";
 import { useState } from "react";
@@ -16,16 +15,14 @@ const RestaurantMenu = () => {
     return <ResMenuShimmer />;
   }
 
-  const categories = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+  const categories = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
     (c) => c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
 
-  const { name, areaName, avgRating, cloudinaryImageId, cuisines, costForTwoMessage, sla, city } = resInfo?.data?.cards[2]?.card?.card?.info;
-
-  // console.log(city);
+  const { name, areaName, avgRating, cuisines, sla, city } = resInfo?.data?.cards[0]?.card?.card?.info;
 
   return (
-    <div className="max-w-[720px] m-auto">
+    <div className="max-w-[720px] m-auto px-4">
       <div className="flex justify-between items-center pb-2 pt-8">
         <h1 className="text-2xl font-bold">{name}</h1>
         <div className="text-gray-500 flex items-center gap-1">

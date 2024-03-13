@@ -15,7 +15,6 @@ class UserClass extends React.Component {
 
   async componentDidMount() {
     //API calls to make them after rendering
-
     const data = await fetch("https://api.github.com/users/akshaymarch7");
     const json = await data.json();
 

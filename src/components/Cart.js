@@ -1,31 +1,61 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeItem, clearCart } from "../utils/cartSlice";
-import { cloudinaryImageUrl } from "../utils/constants";
+import { arrowLeft, cloudinaryImageUrl } from "../utils/constants";
 import starIcon from "../images/star-icon.svg";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const items = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
 
+  const [bill, setBill] = useState(0);
+  useEffect(() => {
+    if (items.length !== 0) {
+      var totalBill = 0;
+      items.map((item) => {
+        totalBill += (item.card.info.price || item.card.info.defaultPrice) * item.card.info.quantity;
+      });
+      setBill(totalBill);
+    }
+  }, [items]);
+
   const handleRemoveItem = (item) => {
     dispatch(removeItem(item));
-    // console.log(item.card.info.id);
   };
 
   const handleClearCart = () => {
     dispatch(clearCart());
   };
 
+  const handlePaymentClick = () => {
+    alert("No Payment Integration! 🚀");
+  };
+
   return (
-    <div className="max-w-[720px] m-auto pt-5">
-      <div className="flex items-center justify-between pb-5 border-b-[1px] border-dashed">
-        <h2 className="font-bold text-2xl">Cart</h2>
+    <div className="max-w-[720px] m-auto pt-5 px-4">
+      <div className="pb-5 border-b-[1px] border-dashed">
+        <div className="flex items-center justify-between">
+          <h2 className="font-bold text-2xl">Cart</h2>
+          {items.length === 0 ? (
+            <p className="text-red-500">No Items in Cart!</p>
+          ) : (
+            <button onClick={handleClearCart} className="bg-red-500 hover:bg-red-400 text-white px-4 py-1 rounded-md">
+              Clear Cart
+            </button>
+          )}
+        </div>
         {items.length === 0 ? (
-          <p className="text-red-500">No Items in Cart!</p>
+          <p className="text-gray-500">Add items to Cart!</p>
         ) : (
-          <button onClick={handleClearCart} className="bg-red-500 hover:bg-red-400 text-white px-4 py-1 rounded-md">
-            Clear Cart
-          </button>
+          <div>
+            <p className="text-gray-500">Item Total: ₹{bill / 100}</p>
+            <p className="text-gray-500">Fee: ₹0</p>
+            <p className="font-semibold">To Pay: ₹{bill / 100}</p>
+            <button onClick={handlePaymentClick} className="bg-orange-500 text-white px-5 py-1 mt-4 rounded-md font-bold">
+              Procceed to Payment
+            </button>
+          </div>
         )}
       </div>
       {items.map((item, index) => (
@@ -43,7 +73,8 @@ const Cart = () => {
             <p className="text-gray-900 text-sm">₹{item.card.info.price / 100 || item.card.info.defaultPrice / 100}</p>
             <p className="text-gray-400 text-sm pt-3 pb-6">{item.card.info.description}</p>
           </div>
-          <div className="relative ml-3">
+          <div className="relative ml-3 flex flex-col items-center">
+            <p className=" text-lg text-md text-green-600">QUATITY: {item.card.info.quantity}</p>
             {item.card.info.imageId !== undefined ? (
               <img
                 className="max-w-[120px] max-h-[100px] w-[120px] h-[120px] object-cover rounded-lg"

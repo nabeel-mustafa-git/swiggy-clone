@@ -9,10 +9,13 @@ const useRestaurantMenu = (resId) => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(corsBypasser + apiUrlRestaurantMenu + resId.resId);
-
-    const json = await data.json();
-    setResInfo(json);
+    try {
+      const data = await fetch(corsBypasser + apiUrlRestaurantMenu + resId.resId);
+      const json = await data.json();
+      setResInfo(json);
+    } catch (err) {
+      console.log("Error in Fetching Restaurant Data: " + err);
+    }
   };
 
   return resInfo;

@@ -14,19 +14,13 @@ const HeroTopSlider = ({ data }) => {
 
   const handleNextClick = () => {
     firstIndex < itemsLength - itemsToShow ? setFirstIndex(firstIndex + itemsToMove) : "";
-
-    // console.log("Next click");
   };
   const handleBackClick = () => {
     firstIndex > itemsToMove ? setFirstIndex(firstIndex - itemsToMove) : setFirstIndex(0);
-
-    // console.log("Back click");
   };
 
-  // console.log(newItems);
-
   return (
-    <div className="overflow-hidden max-width">
+    <div className="overflow-hidden max-width max-lg:px-4">
       <div className="flex items-center justify-between">
         <h2 className="font-bold text-2xl py-3">{title}</h2>
         <div className="flex gap-3">

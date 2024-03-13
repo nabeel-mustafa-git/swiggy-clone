@@ -1,4 +1,3 @@
-import { useState } from "react";
 import RestaurantAccordionList from "./RestaurantAccordionList";
 
 const RestaurantAccordion = ({ data, showItems, setShowIndex, closeShowIndex }) => {

@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -8,12 +8,32 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       //mutating  the state
-      state.items.push(action.payload);
+      const newItem = action.payload;
+
+      if (state.items.length === 0) {
+        newItem.card.info.quantity = 1;
+        state.items.push(newItem);
+      } else {
+        const index = state.items.findIndex((item) => item.card.info.id === action.payload.card.info.id);
+
+        if (index === -1) {
+          newItem.card.info.quantity = 1;
+          state.items.push(newItem);
+          // console.log(state.items);
+        } else {
+          const quat = state.items[index].card.info.quantity;
+          state.items[index].card.info.quantity = quat + 1;
+        }
+      }
     },
     removeItem: (state, action) => {
-      const newArray = state.items.filter((item) => item.card.info.id !== action.payload.card.info.id);
-      state.items = newArray;
-      console.log(current(state));
+      if (action.payload.card.info.quantity === 1) {
+        const newArray = state.items.filter((item) => item.card.info.id !== action.payload.card.info.id);
+        state.items = newArray;
+      } else {
+        const index = state.items.findIndex((item) => item.card.info.id === action.payload.card.info.id);
+        state.items[index].card.info.quantity -= 1;
+      }
     },
     clearCart: (state) => {
       // console.log(current(state));

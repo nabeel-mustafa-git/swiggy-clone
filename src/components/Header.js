@@ -2,27 +2,44 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { CloseIcon, BurgerIcon } from "../utils/constants";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const [openNav, setOpenNav] = useState(false);
+
   const userData = useContext(UserContext);
+  const { loggedInUser } = userData;
 
   //subscribing to store using selector
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
 
-  const { loggedInUser } = userData;
+  const handleNavClick = () => {
+    setOpenNav(!openNav);
+  };
+
   return (
-    <div className="header flex items-center justify-between py-4 px-20 shadow-lg shadow-gray-200">
+    <div className="header flex items-center justify-between py-4 px-20 max-md:px-6 shadow-lg shadow-gray-200">
       <div className="logo-container ">
-        <h5 className="logo">
+        <h5 className="logo flex items-center">
           <Link to="/">
             <img className="w-[34px]" src="https://www.cdnlogo.com/logos/s/4/swiggy.svg" />
           </Link>
+          <p className="text-sm pl-6 text-gray-500">Bangalore, Karnataka</p>
         </h5>
       </div>
-      <div className="nav-items">
-        <ul className="flex items-center gap-12 font-semibold text-gray-800 hover:*:text-orange-500 *:scale-90">
+      <div
+        className={`nav-items
+      z-[0] bg-white
+      max-lg:absolute max-lg:top-0 max-lg:right-0 max-lg:h-full max-lg:pt-20 max-lg:px-10 ${
+        openNav === true ? "max-lg:translate-x-[0%] max-lg:block" : "max-lg:translate-x-[100%] max-lg:hidden"
+      }`}
+      >
+        <ul
+          className="flex items-center gap-12 font-semibold text-gray-800 hover:*:text-orange-500 *:scale-90
+          
+          max-lg:flex-col-reverse"
+        >
           <li>
             <Link to="/about" className="flex gap-1 items-center">
               About Us
@@ -83,6 +100,9 @@ const Header = () => {
             </button>
           </li>
         </ul>
+      </div>
+      <div onClick={handleNavClick} className="max-lg:block hidden relative z-2 cursor-pointer">
+        {openNav === true ? <CloseIcon /> : <BurgerIcon />}
       </div>
     </div>
   );

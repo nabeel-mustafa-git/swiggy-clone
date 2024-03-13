@@ -2,15 +2,19 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 import starIcon from "../images/star-icon.svg";
 import { cloudinaryImageUrl } from "../utils/constants";
+import { useState } from "react";
+import PopUp from "./PopUp";
 
 const RestaurantAccordionList = ({ items }) => {
   const dispatch = useDispatch();
+  // const [showPopUp, setShowPopUp] = useState(false);
 
   const handleAddItem = (item) => {
     //dispatch action
     dispatch(addItem(item));
+
+    // setShowPopUp(true);
   };
-  //   console.log(items[0].card.info.isBestseller);
 
   return (
     <div>
@@ -50,6 +54,8 @@ const RestaurantAccordionList = ({ items }) => {
           </div>
         </div>
       ))}
+
+      {/* {showPopUp ? <PopUp data="PopUp" /> : ""} */}
     </div>
   );
 };

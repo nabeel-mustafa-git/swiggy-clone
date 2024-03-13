@@ -1,16 +1,16 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import Error from "./components/Error";
-import Shimmer from "./components/Shimmer";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-// import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import useOnlineStatus from "./utils/useOnlineStatus";
+import NoInternet from "./components/NoInternet";
 
 //Chunking
 //Code Splitting
@@ -30,6 +30,8 @@ const AppLayout = () => {
   //   };
   //   setUserName(data.name);
   // }, []);
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) return <NoInternet />;
 
   return (
     // <UserContext.Provider value={{ loggedInUser: userName }}>
@@ -55,7 +57,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: (
-          <Suspense fallback={<h2>Loading</h2>}>
+          <Suspense fallback={<h2 className="w-8/12 m-auto font-bold text-4xl">Loading...</h2>}>
             <About />
           </Suspense>
         ),
@@ -71,7 +73,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/grocery",
         element: (
-          <Suspense fallback={<Shimmer />}>
+          <Suspense fallback={<h2 className="w-8/12 m-auto font-bold text-4xl">Loading...</h2>}>
             <Grocery />
           </Suspense>
         ),
