@@ -88,6 +88,7 @@ const Body = () => {
                   {restaurant.info.avgRating > 4.4 ? <RestaurantCardPromoted resData={restaurant} /> : <RestaurantCard resData={restaurant} />}
                 </Link>
               ))}
+              {filteredRestaurants.length === 0 ? <p className="py-4 text-gray-400">No Restaurant found!</p> : ""}
             </div>
           </div>
         )}
