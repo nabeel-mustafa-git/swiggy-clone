@@ -6,10 +6,10 @@ const RestaurantCard = ({ resData }) => {
   const subHeader = resData?.info?.aggregatedDiscountInfoV3?.subHeader;
 
   return (
-    <div className="res-card flex flex-col aspect-[2/2.5] md:max-w-[220px] max-md:max-w-[180px] hover:shadow-2xl shadow-gray-500 my-2 rounded-2xl ease duration-300">
+    <div className="res-card flex flex-col aspect-[2/2.5] md:max-w-[220px] max-md:max-w-[180px] max-sm:max-w-[155px] hover:shadow-2xl shadow-gray-500 my-2 rounded-2xl ease duration-300">
       <div className="relative rounded-2xl overflow-hidden">
         <img
-          className="res-card-img md:max-w-[220px] max-md:max-w-[180px] aspect-[3/2] object-cover"
+          className="res-card-img md:max-w-[220px] max-md:max-w-[180px] max-sm:max-w-[155px] aspect-[3/2] object-cover"
           src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId}
           alt={name}
         ></img>
@@ -21,16 +21,16 @@ const RestaurantCard = ({ resData }) => {
           ""
         )}
       </div>
-      <h3 className="res-card-name font-medium text-lg px-3 pt-1 text-gray-700 text-ellipsis text-nowrap overflow-hidden">{name}</h3>
-      <div className="rating-container px-3 flex items-center gap-2 font-medium text-gray-700">
+      <h3 className="res-card-name font-medium text-lg px-3 max-sm:px-0 pt-1 text-gray-700 text-ellipsis text-nowrap overflow-hidden">{name}</h3>
+      <div className="rating-container px-0 max-sm:px-1 flex items-center gap-2 font-medium text-gray-700">
         <div className="star-icon w-[20px] h-[20px] p-[2px] bg-green-600 rounded-full text-white flex items-center justify-center">
           <StarIcon />
         </div>
         <h4 className="rating">{avgRating}</h4>
-        <h4 className="delivery">&#183; {sla.slaString}</h4>
+        <h4 className="delivery text-ellipsis text-nowrap overflow-hidden">&#183; {sla.slaString}</h4>
       </div>
-      <p className="dishes px-3 text-ellipsis text-nowrap font-normal overflow-hidden text-gray-400">{cuisines.join(", ")}</p>
-      <p className="text-gray-400 px-3 font-noraml">{areaName}</p>
+      <p className="dishes px-3 max-sm:px-0 text-ellipsis text-nowrap font-normal overflow-hidden text-gray-400">{cuisines.join(", ")}</p>
+      <p className="text-gray-400 max-sm:px-0 px-3 font-noraml">{areaName}</p>
     </div>
   );
 };
