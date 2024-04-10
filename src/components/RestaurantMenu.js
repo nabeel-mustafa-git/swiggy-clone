@@ -15,11 +15,13 @@ const RestaurantMenu = () => {
     return <ResMenuShimmer />;
   }
 
-  const categories = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+  console.log(resInfo);
+
+  const categories = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
     (c) => c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
 
-  const { name, areaName, avgRating, cuisines, sla, city } = resInfo?.data?.cards[0]?.card?.card?.info;
+  const { name, areaName, avgRating, cuisines, sla, city } = resInfo?.data?.cards[2]?.card?.card?.info;
 
   return (
     <div className="max-w-[720px] m-auto px-4">

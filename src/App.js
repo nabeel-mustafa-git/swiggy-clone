@@ -57,7 +57,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: (
-          <Suspense fallback={<h2 className="w-8/12 m-auto font-bold text-4xl">Loading...</h2>}>
+          <Suspense fallback={<h2 className="flex w-full items-center justify-center font-bold text-4xl">Loading...</h2>}>
             <About />
           </Suspense>
         ),
